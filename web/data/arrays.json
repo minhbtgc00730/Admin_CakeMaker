@@ -1,0 +1,23 @@
+{ "results": [
+    {
+        "createdAt": "2015-12-22T08:28:30.038Z",
+        "description": "A chocolate cake with some cherry. Try it?",
+        "discount": 10,
+        "egg": true,
+        "name": "Chocolate Cherry",
+        "objectId": "1F52Da354n",
+        "price": 560,
+        "updatedAt": "2015-12-27T08:38:44.495Z"
+    },
+	{
+        "createdAt": "2015-12-27T08:36:09.288Z",
+        "description": "A cake with a lot of strawberries",
+        "discount": 10,
+        "egg": true,
+        "name": "Strawberry Cake",
+        "objectId": "79TJkl5aCt",
+        "price": 550,
+        "updatedAt": "2015-12-27T09:05:12.789Z"
+    }
+]
+}
