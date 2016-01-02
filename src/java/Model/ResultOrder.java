@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Bui
  */
-public class Result {
-    public List<Product> results;
-
+public class ResultOrder {
+        
+    public List<Order> results;
 }

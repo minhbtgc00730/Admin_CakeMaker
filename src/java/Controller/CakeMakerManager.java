@@ -6,8 +6,10 @@
 package Controller;
 
 import Api.CakeApi;
+import Model.Order;
 import Model.Product;
 import Model.Result;
+import Model.ResultOrder;
 import com.google.gson.Gson;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -33,8 +35,16 @@ public class CakeMakerManager {
         
         return r.results;
     }
+    
+    public List<Order> showOrders() {
+        CakeApi api = retro.create(CakeApi.class);
+        ResultOrder resultOrder = api.getListOrder("AK5deTY4cweQkqGYJtZ8t71CLPihFOsiFkSQy5HX", "l5OJy4F4rw3COKG6Jgc0VKNi7rFQzarUVLcjw4jA");
+        
+        return resultOrder.results;
+    }
+    
 //    public static void main(String[] args) {
-//        getAllProduct().stream().forEach(x-> System.out.println(x));
+//        showOrders().stream().forEach(x-> System.out.println(x));
 //    }
 
 }

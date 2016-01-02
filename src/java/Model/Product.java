@@ -30,7 +30,7 @@ public class Product {
 
     public Product() {
     }
-
+   
     public List<Product> list;
 
     public void setList(List<Product> list) {
