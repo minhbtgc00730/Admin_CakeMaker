@@ -2,10 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
     <h:head>
         <meta charset="utf-8"/>
@@ -18,10 +16,6 @@
         <link href="img/icon.png" rel="shortcut icon" type="image/x-icon"/>
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
-
-        <link href="css/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-        <!-- DataTables Responsive CSS -->
-        <link href="css/dataTables/dataTables.responsive.css" rel="stylesheet"/>
         <!-- MetisMenu CSS -->
         <link href="css/metisMenu.min.css" rel="stylesheet"/>
 
@@ -162,10 +156,33 @@
                             </div>
                             <h1>Add new Cake</h1>
                             <hr/>
-                            <div id="form-add">
-                                <h:form>
-                                    
-                                </h:form>
+                            <button id="btnAdd" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-plus"></span>                   
+                                Create new cake
+                            </button>
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog modal-md">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Create a new cake</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h:form>
+                                                <h:inputText class="form-control" a:placeholder="Name"/>
+                                                <h:inputText class="form-control" a:placeholder="Price"/>
+                                                <h:inputText class="form-control" a:placeholder="Discount"/>
+                                                <h:inputText class="form-control" a:placeholder="Egg"/>
+                                                <p:fileUpload />
+                                            </h:form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                         <!-- /.col-lg-12 -->
@@ -180,7 +197,6 @@
         <!-- /#wrapper -->
 
         <!-- jQuery -->
-        <script src="js/jquery.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
@@ -189,16 +205,9 @@
         <script src="js/metisMenu.min.js"></script>
 
 
-        <script src="js/dataTables/jquery.dataTables.min.js"></script>
-        <script src="js/dataTables/dataTables.bootstrap.min.js"></script>
 
         <!-- Custom Theme JavaScript -->
         <script src="js/startmin.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables').DataTable();
-            });
-        </script>
     </h:body>
 </html>
 
