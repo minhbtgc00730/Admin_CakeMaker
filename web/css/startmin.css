@@ -374,4 +374,7 @@ table.dataTable thead .sorting:after {
     color: #df8a13;
 }
 
-
+#btnAddCake a:hover, 
+#btnAddEvent a:hover{
+    text-decoration: none;
+}

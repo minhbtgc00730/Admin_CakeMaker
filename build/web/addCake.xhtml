@@ -102,7 +102,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="index.html"><i class="fa fa-dashboard fa-fw active"></i> Dashboard <span
+                                <a href="index.xhtml"><i class="fa fa-dashboard fa-fw active"></i> Dashboard <span
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
@@ -141,49 +141,15 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="page-header">
-                                <button id="btnAdd" type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-plus"></span> 
-                                    <a href="addCake.xhtml">
-                                        Create new cake
-                                    </a>
-                                </button>
-                                <button id="btnAdd" type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-calendar"></span> 
-                                    <a href="addEvent.xhtml">
-                                        Create new event
-                                    </a>
-                                </button>
+                                <h1>Add new Cake</h1>
                             </div>
-                            <h1>Add new Cake</h1>
-                            <hr/>
-                            <button id="btnAdd" data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-plus"></span>                   
-                                Create new cake
-                            </button>
-                            <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog modal-md">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Create a new cake</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h:form>
-                                                <h:inputText class="form-control" a:placeholder="Name"/>
-                                                <h:inputText class="form-control" a:placeholder="Price"/>
-                                                <h:inputText class="form-control" a:placeholder="Discount"/>
-                                                <h:inputText class="form-control" a:placeholder="Egg"/>
-                                                <p:fileUpload />
-                                            </h:form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                            <h:form class="col-lg-6">
+                                <h:inputText class="form-control" a:placeholder="Name"/>
+                                <h:inputText class="form-control" a:placeholder="Price"/>
+                                <h:inputText class="form-control" a:placeholder="Discount"/>
+                                <p:inputTextarea class="form-control" rows="6" a:placeholder="Description"/>
+                                <p:button outcome="chooseEvent.xhtml" id="btn-next" class="btn btn-default" value="Next"/>
+                            </h:form>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -198,12 +164,13 @@
 
         <!-- jQuery -->
 
+        
+        <script src="js/jquery.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
         <script src="js/metisMenu.min.js"></script>
-
 
 
         <!-- Custom Theme JavaScript -->

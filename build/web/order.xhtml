@@ -105,7 +105,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="index.html"><i class="fa fa-dashboard fa-fw active"></i> Dashboard <span
+                                <a href="index.xhtml"><i class="fa fa-dashboard fa-fw active"></i> Dashboard <span
                                         class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
@@ -144,64 +144,18 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="page-header">
-                                <button id="btnAdd" data-toggle="modal" data-target="#addCakeModal" type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-plus"></span>                   
-                                    Create new cake
+                                <button id="btnAddCake" type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-plus"></span> 
+                                    <a href="addCake.xhtml">
+                                        Create new cake
+                                    </a>
                                 </button>
-                                <div class="modal fade" id="addCakeModal" role="dialog">
-                                    <div class="modal-dialog modal-md">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Create a new cake</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h:form>
-                                                    <h:inputText class="form-control" a:placeholder="Name"/>
-                                                    <h:inputText class="form-control" a:placeholder="Price"/>
-                                                    <h:inputText class="form-control" a:placeholder="Discount"/>
-                                                    <select class="form-control" id="event">
-                                                        <option value="">Wedding Cake</option>
-                                                        <option value="">Birthday Cake</option>
-                                                        <option value="">Anniversary</option>
-                                                    </select>
-                                                    <p:fileUpload />
-                                                    <br/>
-                                                    <p:inputTextarea class="form-control" rows="6" a:placeholder="Description"/>
-                                                    <p:commandButton class="btn btn-default" value="Submit"/>
-                                                </h:form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button id="btnAdd" data-toggle="modal" data-target="#addEventModal" type="button" class="btn btn-default">
+                                <button id="btnAddEvent" type="button" class="btn btn-default">
                                     <span class="glyphicon glyphicon-calendar"></span>
-                                    Create new event
+                                    <a href="addEvent.xhtml">
+                                        Create new event
+                                    </a>
                                 </button>
-                                <div class="modal fade" id="addEventModal" role="dialog">
-                                    <div class="modal-dialog modal-md">
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Create a new event</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h:form>
-                                                    <h:inputText class="form-control" a:placeholder="Name"/>
-                                                    <p:commandButton class="btn btn-default" value="Submit"/>
-                                                </h:form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <h1>Order</h1>
                             <hr/>
@@ -237,7 +191,7 @@
                                     <p:column headerText="Total" style="width: 10%">
                                         <h:outputText value="#{cm.total}" />
                                     </p:column>
-                                    
+
                                     <p:column headerText="Status" style="width: 10%">
                                         <h:outputText value="" />
                                     </p:column>

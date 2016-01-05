@@ -19,7 +19,6 @@
         <link href="img/icon.png" rel="shortcut icon" type="image/x-icon"/>
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
-
         <!-- MetisMenu CSS -->
         <link href="css/metisMenu.min.css" rel="stylesheet"/>
 
@@ -28,6 +27,16 @@
 
         <!-- Custom Fonts -->
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="../js/index.js"></script>
+        <script src="//www.parsecdn.com/js/parse-1.6.12.min.js"></script>
+    
+        <![endif]-->
     </h:head>
     <h:body>
         <div id="wrapper">
@@ -148,44 +157,23 @@
                                     </a>
                                 </button>
                             </div>
-                            <h1>Cakes</h1>
+                            <h1>Event</h1>
                             <hr/>
-                            <h:form>
-                                <p:dataTable var="cm" value="#{cakeManage.showProducts()}" rows="10"
+                            <h:form class="col-lg-6">
+                                <p:dataTable var="cm" value="#{cakeManage.showEvents()}" rows="10"
                                              paginator="true"
                                              paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                              >
-                                    <p:column headerText="Id" style="width: 12%">
-                                        <h:outputText value="#{cm.objectId}" />
+                                    <p:column headerText="Id"  style="width: 30%">
+                                        <h:outputText value="#{cm.objectId}"/>
                                     </p:column>
 
-                                    <p:column headerText="Name" style="width: 20%">
+                                    <p:column headerText="Name">
                                         <h:outputText value="#{cm.name}" />
-                                    </p:column>
-
-                                    <p:column headerText="Price" style="width: 8%">
-                                        <h:outputText value="#{cm.price}" />
-                                    </p:column>
-
-                                    <p:column headerText="Discount" style="width: 9%">
-                                        <h:outputText value="#{cm.discount}" />
-                                    </p:column>
-
-                                    <p:column headerText="Description">
-                                        <h:outputText value="#{cm.description}" />
-                                    </p:column>
-                                    
-                                    <p:column headerText="Image" style="width:6%">
-                                        <p:button href="viewImage.xhtml" icon="ui-icon-image" ></p:button>
-                                    </p:column>
-                                    
-                                    <p:column style="width: 10%">
-                                        <p:button icon="ui-icon-refresh"></p:button>
-                                        <p:button icon="ui-icon-closethick"></p:button>
                                     </p:column>
                                 </p:dataTable>
                             </h:form>
-                            <br/>
+                            <br/>    
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -196,13 +184,21 @@
             <!-- /#page-wrapper -->
 
         </div>
+        <!-- /#wrapper -->
 
-        <!--<script src="js/jquery.min.js"></script>-->
+        <!-- jQuery -->
 
+        <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
 
+        <!-- Metis Menu Plugin JavaScript -->
         <script src="js/metisMenu.min.js"></script>
 
+
+        <script src="js/dataTables/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables/dataTables.bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
         <script src="js/startmin.js"></script>
     </h:body>
 </html>

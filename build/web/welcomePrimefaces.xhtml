@@ -39,7 +39,15 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:outputLabel value="Country: " />
+                        <p:selectOneMenu id="console" value="" style="width:125px">
+                            <f:selectItem itemLabel="Select One" itemValue="" />
+                            <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                            <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
                 </p:layoutUnit>
 
             </p:layout>

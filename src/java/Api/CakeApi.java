@@ -1,6 +1,7 @@
 package Api;
 
 import Model.Result;
+import Model.ResultEvent;
 import Model.ResultOrder;
 import retrofit.http.GET;
 import retrofit.http.Header;
@@ -23,6 +24,11 @@ public interface CakeApi {
 
     @GET("/1/classes/Order")
     public ResultOrder getListOrder(@Header("X-Parse-REST-API-Key") String key,
+            @Header("X-Parse-Application-Id") String app
+    );
+    
+    @GET("/1/classes/Event")
+    public ResultEvent getListEvent(@Header("X-Parse-REST-API-Key") String key,
             @Header("X-Parse-Application-Id") String app
     );
 }
