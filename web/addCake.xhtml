@@ -144,11 +144,11 @@
                                 <h1>Add new Cake</h1>
                             </div>
                             <h:form class="col-lg-6">
-                                <h:inputText class="form-control" a:placeholder="Name"/>
-                                <h:inputText class="form-control" a:placeholder="Price"/>
-                                <h:inputText class="form-control" a:placeholder="Discount"/>
-                                <p:inputTextarea class="form-control" rows="6" a:placeholder="Description"/>
-                                <p:button outcome="chooseEvent.xhtml" id="btn-next" class="btn btn-default" value="Next"/>
+                                <h:inputText class="form-control" a:placeholder="Name" value="#{product.name}"/>
+                                <h:inputText class="form-control" a:placeholder="Price" value="#{product.price}"/>
+                                <h:inputText class="form-control" a:placeholder="Discount" value="#{product.discount}"/>
+                                <p:inputTextarea class="form-control" rows="6" a:placeholder="Description" value="#{product.description}"/>
+                                <h:commandButton class="btn btn-default" value="Add" action="#{product.addProduct()}"/>
                             </h:form>
                         </div>
                         <!-- /.col-lg-12 -->

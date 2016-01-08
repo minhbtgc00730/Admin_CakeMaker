@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Controller.CakeMakerManager;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -17,6 +18,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 
 public class Event {
+
     public String objectId;
     public String name;
 
@@ -25,12 +27,36 @@ public class Event {
         this.objectId = objectId;
     }
 
-    public List<Event> list;
+    public Event(String name) {
+        this.name = name;
+    }
+
+    public void addEvent() {
+        CakeMakerManager cmm = new CakeMakerManager();
+        Event event = new Event(name);
+        cmm.addEvent(event);
+    }
+
+    public String deleteEvent(String object_id) {
+        CakeMakerManager cmm = new CakeMakerManager();
+        cmm.deleteEvent(object_id);
+        return "event.xhtml?faces-redirect=true";
+    }
     
+    public String updateEvent(String object_id, Event event) {
+        CakeMakerManager cmm = new CakeMakerManager();
+        return "event.xhtml?faces-redirect=true";
+    }
+
+    public Event() {
+    }
+
+    public List<Event> list;
+
     public void setList(List<Event> list) {
         this.list = list;
     }
-    
+
     public String getName() {
         return name;
     }

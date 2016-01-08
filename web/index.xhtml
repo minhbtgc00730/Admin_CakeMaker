@@ -180,8 +180,8 @@
                                     </p:column>
                                     
                                     <p:column style="width: 10%">
-                                        <p:button icon="ui-icon-refresh"></p:button>
-                                        <p:button icon="ui-icon-closethick"></p:button>
+                                        <p:commandButton icon="ui-icon-refresh" action="#{product.toUpdate(cm)}"/>
+                                        <p:commandButton icon="ui-icon-closethick" action="#{product.deleteProduct(cm.objectId)}"/>
                                     </p:column>
                                 </p:dataTable>
                             </h:form>
@@ -197,7 +197,7 @@
 
         </div>
 
-        <!--<script src="js/jquery.min.js"></script>-->
+        <script src="js/jquery.min.js"></script>
 
         <script src="js/bootstrap.min.js"></script>
 

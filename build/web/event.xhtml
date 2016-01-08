@@ -171,6 +171,11 @@
                                     <p:column headerText="Name">
                                         <h:outputText value="#{cm.name}" />
                                     </p:column>
+                                    
+                                    <p:column headerText="Tools" style="width: 22%">
+                                        <p:commandButton action="#{event.updateEvent(object_id, event)}" icon="ui-icon-refresh"/>
+                                        <p:commandButton action="#{event.deleteEvent(cm.objectId)}" icon="ui-icon-closethick" />
+                                    </p:column>
                                 </p:dataTable>
                             </h:form>
                             <br/>    

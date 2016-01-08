@@ -1,6 +1,8 @@
 package Model;
 
+import Controller.CakeMakerManager;
 import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -18,7 +20,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "product")
 @SessionScoped
         
-public class Product {
+public class Product{
     public String createdAt;
     public String updatedAt;
     public String objectId;
@@ -37,6 +39,15 @@ public class Product {
         this.list = list;
     }
 
+    public Product(String name, int discount, boolean egg, float price, String description) {
+        this.name = name;
+        this.discount = discount;
+        this.egg = egg;
+        this.price = price;
+        this.description = description;
+    }
+    
+    
     public Product(String createdAt, String updatedAt, String objectId, String name, int discount, boolean egg, float price, String description, List<Product> list) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -49,7 +60,31 @@ public class Product {
         this.list = list;
     }
 
+    public void addProduct() {
+        CakeMakerManager cm = new CakeMakerManager();
+        Product product = new Product(name, discount, false, price, description);
+        cm.addProduct(product);            
+    }
+    
+    public void deleteProduct(String object_id) {
+        CakeMakerManager cm = new CakeMakerManager();
+        cm.deleteProduct(object_id);
+    }
 
+    public String toUpdate(Product product){
+        this.objectId = product.getObjectId();
+        this.name = product.getName();
+        this.price = product.getPrice();
+        this.discount = product.getDiscount();
+        this.description = product.getDescription();
+        return "updateCake.xhtml?faces-redirect=true";
+    }
+    
+    public String updateProduct(String object_id, Product product){
+        CakeMakerManager cmm = new CakeMakerManager();
+        cmm.updateProduct(object_id, product);
+        return "updateCake.xhtml?faces-redirect=true";
+    }
     @Override
     public String toString() {
         return "Product{" + "name=" + name + ", price=" + price + ", discount=" + discount + ", egg=" + egg + ", description=" + description + '}';
